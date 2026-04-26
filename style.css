@@ -242,27 +242,13 @@ header {
   max-width: 520px;
 }
 
-.intro-decoration { flex: 0 0 260px; position: relative; height: 260px; }
+.intro-decoration { flex: 0 0 300px; display: flex; align-items: center; justify-content: center; }
 
-.deco-circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: var(--blue-light);
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.deco-square {
-  width: 120px;
-  height: 120px;
-  border-radius: 16px;
-  background: var(--blue);
-  opacity: 0.18;
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
+.props-image {
+  width: 200%;
+  max-width: 500px;
+  height: auto;
+  display: block;
 }
 
 /* ─── PILLARS ─────────────────────────────────────────── */
