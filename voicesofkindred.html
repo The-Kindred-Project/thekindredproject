@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Voices Of Kindred | The Kindred Project</title>
   <link rel="shortcut icon" href="Images/Logos/TheKindredProjectFavicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- NAVIGATION -->
   <nav class="top-nav">
     <a href="index.html" class="logo">
       <img src="Images/Logos/TheKindredProjectLogo.png" alt="The Kindred Project">
@@ -30,83 +28,28 @@
     </div>
   </nav>
 
-  <!-- SPLIT HEADER -->
   <header class="split-header">
-    <img src="Images/Buttons/VoicesOfKindred.png" class="header-image" alt="Voices of Kindred">
+    <img src="Images/Buttons/VoicesOfKindred.png" class="header-image">
     <div class="vertical-line"></div>
     <div class="header-text">
       <h1>Voices of Kindred</h1>
       <p>
-        A global opportunity for students to share their perspectives on education — and be heard by the people who shape it.
+        Something exciting is on its way. Stay tuned.
       </p>
     </div>
   </header>
 
-  <!-- SUBMISSIONS MAIN SECTION -->
-  <section class="submissions-section">
-    <div class="section-header">
-      <div class="intro-tag">Student Voices</div>
-      <h2>Hear from students around the world</h2>
-    </div>
-
-    <div class="submissions-container">
-
-      <!-- BOX 1: REFINED SUBMISSION VIDEO -->
-      <div class="submission-box" data-video-src="Videos/RaidAzerbaijan.mp4">
-        <button class="sub-close-btn" aria-label="Close layout">
-          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        </button>
-        
-        <div class="sub-video-wrapper">
-          <video controls preload="none"></video>
-        </div>
-
-        <h3 class="sub-name">Raid Gafarli</h3>
-        <span class="sub-country">Azerbaijan</span>
-        <p class="sub-desc">Raid outlines key insights regarding how localized structural models within school networks can transform to maximize critical inquiry and independent learning.</p>
-        
-        <button class="sub-play-btn" aria-label="Play video submission">
-          <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg>
-          Watch Video
-        </button>
-      </div>
-
-      <!-- BOX 2: CLEAN PLACEHOLDER BOX -->
-      <div class="submission-box" data-video-src="Videos/placeholder.mp4">
-        <button class="sub-close-btn" aria-label="Close layout">
-          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        </button>
-        
-        <div class="sub-video-wrapper">
-          <video controls preload="none"></video>
-        </div>
-
-        <h3 class="sub-name">This Could Be You</h3>
-        <span class="sub-country">Your Country</span>
-        <p class="sub-desc">Your unique background can help rewrite the template for future institutional programs. Record a brief video sharing your perspective and lead the transformation.</p>
-        
-        <button class="sub-play-btn" aria-label="Submit or preview video details">
-          <svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"></polygon></svg>
-          Share Your Voice
-        </button>
-      </div>
-
+  <section class="coming-soon-section">
+    <div class="coming-soon-inner">
+      <div class="intro-tag">Coming Soon</div>
+      <h2>We're working on something big.</h2>
+      <p class="coming-soon-sub">
+        Voices of Kindred — our global video submission contest amplifying student perspectives on education policy — is launching soon. Check back here for updates, or get in touch if you'd like to be notified when we go live.
+      </p>
+      <a href="getincontact.html" class="btn-primary">Get Notified</a>
     </div>
   </section>
 
-  <!-- CALL TO ACTION BANNER -->
-  <section class="cta-banner">
-    <div class="cta-inner">
-      <h2>Ready to share your voice?</h2>
-      <p>It only takes one email. We're listening.</p>
-      <div class="cta-buttons">
-        <a href="mailto:thekindredproject.outreach@gmail.com?subject=Voices%20of%20Kindred%20Submission" class="btn-primary">Submit Your Video</a>
-        <a href="getincontact.html" class="btn-outline">Ask a Question</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">
@@ -116,86 +59,5 @@
       <p class="footer-copy">© 2026 The Kindred Project</p>
     </div>
   </footer>
-
-  <!-- VIEWPORT BACKGROUND OVERLAY -->
-  <div class="sub-viewport-backdrop" id="subBackdrop"></div>
-
-  <!-- INTERACTIVE FUNCTIONAL BEHAVIOR SCRIPT -->
-  <script>
-    const backdrop = document.getElementById('subBackdrop');
-    const boxes = document.querySelectorAll('.submission-box');
-
-    boxes.forEach(box => {
-      const playBtn = box.querySelector('.sub-play-btn');
-      const closeBtn = box.querySelector('.sub-close-btn');
-      const videoWrapper = box.querySelector('.sub-video-wrapper');
-      const videoElement = box.querySelector('video');
-      const videoSourcePath = box.getAttribute('data-video-src');
-
-      // Click event for play button
-      playBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        
-        // Close any currently open box before expanding a new one
-        boxes.forEach(otherBox => {
-          if (otherBox.classList.contains('expanded')) {
-            collapseBox(otherBox);
-          }
-        });
-
-        // Expand target box
-        box.classList.add('expanded');
-        backdrop.classList.add('active');
-        document.body.style.overflow = 'hidden';
-
-        // Load source path and play video if not already set
-        if (!videoElement.src || videoElement.src === '') {
-          videoElement.src = videoSourcePath;
-        }
-        
-        videoElement.load();
-        videoElement.play().catch(err => console.log("Auto-play blocked or video missing:", err));
-      });
-
-      // Click event for close button
-      closeBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        collapseBox(box);
-      });
-    });
-
-    // Helper function to close and reset video cards safely
-    function collapseBox(boxElement) {
-      boxElement.classList.remove('expanded');
-      backdrop.classList.remove('active');
-      document.body.style.overflow = '';
-
-      const videoElement = boxElement.querySelector('video');
-      if (videoElement) {
-        videoElement.pause();
-      }
-    }
-
-    // Click backdrop to collapse whatever is currently expanded
-    backdrop.addEventListener('click', () => {
-      boxes.forEach(box => {
-        if (box.classList.contains('expanded')) {
-          collapseBox(box);
-        }
-      });
-    });
-
-    // Keyboard support - close open boxes on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        boxes.forEach(box => {
-          if (box.classList.contains('expanded')) {
-            collapseBox(box);
-          }
-        });
-      }
-    });
-  </script>
-
 </body>
 </html>
