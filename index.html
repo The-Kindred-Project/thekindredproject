@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <nav class="top-nav">
     <a href="index.html" class="logo">
       <img src="Images/Logos/TheKindredProjectLogo.png" alt="The Kindred Project">
@@ -29,17 +30,14 @@
   </nav>
 
   <header class="split-header">
-    <img src="Images/Logos/TheKindredProjectLogo.png" class="header-image">
+    <img src="Images/Logos/TheKindredProjectLogo.png" class="header-image" alt="The Kindred Project">
     <div class="vertical-line"></div>
     <div class="header-text">
       <h1>Welcome</h1>
-      <p>
-        Here at The Kindred Project, giving youth worldwide the tools they need to succeed is the goal.
-      </p>
+      <p>Giving youth worldwide the tools they need to succeed.</p>
     </div>
   </header>
 
-  <!-- HERO STATS -->
   <section class="stats-strip">
     <div class="stat">
       <span class="stat-number">4+</span>
@@ -57,13 +55,12 @@
     </div>
   </section>
 
-  <!-- INTRO SECTION -->
   <section class="home-intro">
     <div class="home-intro-inner">
       <div class="intro-tag">Our Purpose</div>
       <h2 class="intro-heading">Education is a right,<br><em>not a privilege.</em></h2>
       <p class="intro-body">
-        The Kindred Project was born from a simple belief: every young person, regardless of where they were born, deserves access to quality education and the opportunity to shape their own future. We work at the intersection of policy, advocacy, and youth empowerment to turn that belief into action.
+        The Kindred Project works at the intersection of policy, advocacy, and youth empowerment — because every young person deserves access to quality education, regardless of where they were born.
       </p>
       <a href="ourmission.html" class="btn-primary">Learn About Our Mission</a>
     </div>
@@ -72,32 +69,48 @@
     </div>
   </section>
 
-  <!-- PILLARS / WHAT WE DO -->
   <section class="pillars">
     <div class="pillars-header">
       <div class="intro-tag">What We Do</div>
       <h2>Three pillars of change</h2>
     </div>
-    <div class="pillars-grid">
-      <div class="pillar-card">
-        <h3>Amplify Youth Voices</h3>
-        <p>Through our Voices of Kindred contest, we give students a global stage to share their ideas on education policy, equity, and innovation.</p>
-        <a href="voicesofkindred.html" class="pillar-link">Explore Voices of Kindred</a>
-      </div>
-      <div class="pillar-card featured">
-        <h3>Advance Education Policy</h3>
-        <p>We advocate for systemic changes that improve access, reduce barriers, and prioritize learners who have been historically underserved.</p>
-        <a href="ourmission.html" class="pillar-link">Our Approach</a>
-      </div>
-      <div class="pillar-card">
-        <h3>Build Global Community</h3>
-        <p>We connect students, educators, and changemakers across borders — because the most powerful solutions emerge when diverse perspectives meet.</p>
-        <a href="getincontact.html" class="pillar-link">Get Involved</a>
-      </div>
+    <div class="pillars-list">
+      <a href="voicesofkindred.html" class="pillar-row">
+        <div class="pillar-num">01</div>
+        <div class="pillar-text">
+          <h3>Amplify Youth Voices</h3>
+          <p>We give students a global stage to share ideas on education policy, equity, and innovation through our Voices of Kindred contest.</p>
+        </div>
+        <span class="pillar-arrow">→</span>
+      </a>
+      <a href="ourmission.html" class="pillar-row">
+        <div class="pillar-num">02</div>
+        <div class="pillar-text">
+          <h3>Advance Education Policy</h3>
+          <p>We advocate for systemic changes that improve access, reduce barriers, and prioritize historically underserved learners.</p>
+        </div>
+        <span class="pillar-arrow">→</span>
+      </a>
+      <a href="getincontact.html" class="pillar-row">
+        <div class="pillar-num">03</div>
+        <div class="pillar-text">
+          <h3>Build Global Community</h3>
+          <p>We connect students, educators, and changemakers across borders — because diverse perspectives create the most powerful solutions.</p>
+        </div>
+        <span class="pillar-arrow">→</span>
+      </a>
     </div>
   </section>
 
-  <!-- CTA BANNER -->
+  <section class="calendar-section">
+    <div class="calendar-header">
+      <div class="intro-tag">Events</div>
+      <h2 style="font-size: clamp(1.5rem, 4vw, 2.5rem);">What's happening</h2>
+      <p class="calendar-sub">Stay up to date with contests, webinars, meetups, and more.</p>
+    </div>
+    <div id="calendar-events" class="calendar-events"></div>
+  </section>
+
   <section class="cta-banner">
     <div class="cta-inner">
       <h2>Ready to make a difference?</h2>
@@ -118,5 +131,7 @@
       <p class="footer-copy">© 2026 The Kindred Project</p>
     </div>
   </footer>
+
+  <script src="events.js?v=2"></script>
 </body>
 </html>
